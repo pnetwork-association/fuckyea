@@ -192,7 +192,7 @@ program.command("deploy <network>")
 
         let _chain = chain ? Chains[chain] : null;
         if(!_chain){
-            const chain_id = await axios.get(`${node_url}/v1/chain/get_info`).then(x => x.data.chain_id).catch(err => {
+            const chain_id = await axios.get(`${node_url}/v1/chain/get_info`).then(x => x.chain_id).catch(err => {
                 return null;
             })
             if(!chain_id){
